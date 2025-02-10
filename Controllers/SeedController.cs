@@ -24,9 +24,7 @@ namespace HotelApi.Controllers
         public async Task<IActionResult> SeedData()
         {
             try
-            {
-                //Delete old records before creating new
-                await _dataService.ClearData();
+            {              
                 //Create new records
                 await _dataService.CreateData();
                 return Ok("Records are created in Hotels,Rooms and RoomTypes tables");
