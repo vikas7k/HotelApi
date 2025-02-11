@@ -12,6 +12,11 @@ namespace HotelApi.Service
             _context = context;
         }
 
+        ~DataService()
+        {
+            _context.Dispose();
+        }
+
         public async Task<List<Hotel>> GetHotelList()
         {
             return await _context.Hotels.ToListAsync();
